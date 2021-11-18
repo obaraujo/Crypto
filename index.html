@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/img/logo_stagon.png" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <title>Stagon Crypto</title>
+</head>
+
+<body>
+  <div class="header">
+    <img src="./assets/img/logo_stagon.png" alt="Logo da stagon" srcset="" width="50">
+    <h1>Stagon Crypto</h1>
+  </div>
+  <div class="container">
+    <label for="code">Digite o código de autenticação:</label>
+    <input type="number" pattern="[0-9]" id="code" maxlength="6" max="99999999" min="0" autocomplete="off"
+      placeholder="xxxxxx">
+    <div class="count_characters">
+      <span class="characters_now">0</span>/6
+    </div>
+    <label for="field">Digite o texto:</label>
+    <textarea type="text" id="field" autocomplete="off" maxlength="150" placeholder="Seu texto vai aqui"
+      wrap="hard"></textarea>
+    <div class="count_characters">
+      <span class="characters_now">0</span>/150
+    </div>
+    <button id="generate">Gerar</button>
+  </div>
+  <div class="container">
+    <label for="field">Veja a saída ou coloque o código para validar</label>
+    <input type="text" id="field_exit" autocomplete="off" placeholder="Aqui onde irá sair seu texto criptografado!">
+    <div><button id="validate">Validar</button>
+      <button id="copy">Copiar</button>
+    </div>
+    <p id="exit"></p>
+  </div>
+  <script type="text/javascript" src="./assets/js/backend.js"></script>
+  <script type="text/javascript" src="./assets/js/frontend.js"></script>
+  <footer>
+    Versão: 0.2.0 Beta
+  </footer>
+</body>
+
+</html>

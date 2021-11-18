@@ -1,0 +1,140 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  color: #fbfbfe;
+  background-color: #000000;
+}
+
+.container {
+  background-color: #1b1b1b;
+  width: 50vw;
+  margin: 50px auto;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  width: 50vw;
+  margin: 50px auto 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  font-size: 25px;
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 100%;
+}
+
+input,
+textarea {
+  margin: 10px 0;
+  border-radius: 6px;
+  min-height: 40px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #333;
+  background-color: #222;
+  transition: border-color 0.2s;
+  outline: currentcolor none 0px;
+}
+
+.count_characters {
+  font-size: 14px;
+  color: #525f5e;
+  font-weight: 700;
+  align-self: flex-end;
+}
+
+.characters_now {
+  font-size: 15px;
+  color: #7e8a89;
+  font-weight: 900;
+}
+
+#exit,
+input,
+textarea {
+  font-size: 15px;
+  font-weight: 600;
+  padding-left: 10px;
+  color: #fbfbfe;
+}
+#exit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+mark {
+  margin: 5px;
+  padding: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  word-break: break-word;
+  font-size: 18px;
+}
+input:focus,
+textarea:focus {
+  border-color: #13e9e4;
+}
+
+textarea {
+  min-width: calc(100% - 20px);
+  max-width: calc(100% - 20px);
+  padding-top: 10px;
+}
+
+button {
+  margin: 15px auto;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-image: linear-gradient(to bottom, #13e9e4, #027878);
+  font-size: 16px;
+  min-width: 100px;
+  min-height: 35px;
+  color: #000000;
+  font-weight: 900;
+  transition: all 0.3s;
+}
+button:hover {
+  filter: brightness(0.9);
+  transform: scale(1.02);
+}
+
+#validate {
+  background-image: linear-gradient(to bottom, #2acc01, #146600);
+  float: right;
+}
+
+footer {
+  background-color: #111;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 15px;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+}
+
+@media screen and (max-width: 500px) {
+  .container,
+  .header {
+    width: 95vw;
+    margin: 30px 0;
+    padding: 10px;
+  }
+}
