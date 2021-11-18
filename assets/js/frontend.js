@@ -1,7 +1,7 @@
 document.querySelector("button#generate").addEventListener("click", () => {
-  if (document.querySelector("#code").value == "") {
+  if (document.querySelector("#code").value == "" || document.querySelector("#code").value.length < 4) {
     document.querySelector("#code").focus();
-    alert("Por favor, insira o código de autenticação!");
+    alert("Por favor, insira o código de autenticação completo!");
   } else {
     const term = document.querySelector("#field").value;
     const code = document.querySelector("#code").value;
@@ -18,9 +18,9 @@ document.querySelector("button#generate").addEventListener("click", () => {
 });
 
 document.querySelector("button#validate").addEventListener("click", () => {
-  if (document.querySelector("#code").value == "") {
+  if (document.querySelector("#code").value == "" || document.querySelector("#code").value.length < 4) {
     document.querySelector("#code").focus();
-    alert("Por favor, insira o código de autenticação!");
+    alert("Por favor, insira o código de autenticação completo!");
   } else {
     const termEncrypted = document.querySelector("#field_exit").value;
     const code = document.querySelector("#code").value;
