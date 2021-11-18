@@ -5,6 +5,10 @@
  * Foi implementado um parte que impede que o sistema gere códigos com " " espaço como primeiro caracter
  * Foi implementado uma condição que se caso a busca pelo caracter retornar undefined o undefined não será adicionado os termos, eliminando o risco de códigos saírem errados por conta disto
  */
+// Versão 0.2.1 Beta
+/**
+ * O script que prevenia o erro com caracteres não suportados estava gerando erros na hora de descriptografar, este erro foi corrigido
+*/
 function getIndexVetorSelected(c, selectedVetor, sizeTerm) {
   const code = c
     .reduce(function (total, num) {
@@ -75,13 +79,18 @@ function encrypt(term, c) {
   let termEncrypted = "";
   let selectVetor = 0;
   charactersOfTerm.forEach((caracter, index) => {
-    selectVetor = getIndexVetorSelected(code, selectVetor, charactersOfTerm.length);
-    let positionCaracter = getCharacters(0).indexOf(caracter);
+    selectVetor = getIndexVetorSelected(
+      code,
+      selectVetor,
+      charactersOfTerm.length
+    );
+    let positionCaracter = getCharacters(0).indexOf(caracter) >= 0 ? getCharacters(0).indexOf(caracter) : getCharacters(0).indexOf(" ");
     let positionCharacterCrypt = getLengthVetorCharacters() - positionCaracter - 1;
+    console.log(selectVetor)
     if (getCharacters(selectVetor)[positionCharacterCrypt] === " " && (index === 0 || index === charactersOfTerm.length - 1)) {
       return false;
     } else {
-      termEncrypted += getCharacters(selectVetor)[positionCharacterCrypt] != undefined ? getCharacters(selectVetor)[positionCharacterCrypt] : '';
+      termEncrypted += getCharacters(selectVetor)[positionCharacterCrypt]
     }
   });
 
@@ -94,9 +103,14 @@ function decrypt(termEncrypted, c) {
   let selectVetor = 0;
   let termDecrypted = "";
   charactersOfTermEncrypted.forEach((caracter, index) => {
-    selectVetor = getIndexVetorSelected(code, selectVetor, charactersOfTermEncrypted.length);
+    selectVetor = getIndexVetorSelected(
+      code,
+      selectVetor,
+      charactersOfTermEncrypted.length
+    );
     let positionCharacterCrypt = getCharacters(selectVetor).indexOf(caracter);
-    let positionCaracter = getLengthVetorCharacters() - positionCharacterCrypt - 1;
+    let positionCaracter =
+      getLengthVetorCharacters() - positionCharacterCrypt - 1;
     termDecrypted += getCharacters(0)[positionCaracter];
   });
   return termDecrypted;
