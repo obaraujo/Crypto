@@ -13,20 +13,18 @@
 
 <body>
   <div class="header">
-    <img src="./assets/img/logo_stagon.png" alt="Logo da stagon" srcset="" width="50">
+    <img src="./assets/img/logo_stagon.png" alt="Logo da stagon" width="50">
     <h1>Stagon Crypto</h1>
     <strong>v0.2.1 Beta</strong>
   </div>
   <div class="container">
     <label for="code">Digite o código de autenticação:</label>
-    <input type="number" pattern="[0-9]" id="code" maxlength="4" max="9999" min="0" autocomplete="off"
-      placeholder="xxxx">
+    <input type="number" id="code" max="9999" min="0" autocomplete="off" placeholder="xxxx">
     <div class="count_characters">
       <span class="characters_now">0</span>/4
     </div>
     <label for="field">Digite o texto:</label>
-    <textarea type="text" id="field" maxlength="5000" autocomplete="off" placeholder="Seu texto vai aqui"
-      wrap="hard"></textarea>
+    <textarea cols="12" id="field" maxlength="5000" autocomplete="off" placeholder="Seu texto vai aqui" wrap="hard"></textarea>
     <div class="count_characters">
       <span class="characters_now">0</span>/5000
     </div>
@@ -40,8 +38,8 @@
     </div>
     <p id="exit"></p>
   </div>
-  <script type="text/javascript" src="./assets/js/backend.js"></script>
-  <script type="text/javascript" src="./assets/js/frontend.js"></script>
+  <script src="./assets/js/backend.js"></script>
+  <script src="./assets/js/frontend.js"></script>
 </body>
 
 </html>
