@@ -45,7 +45,7 @@ document.querySelector("#field").addEventListener("input", function () {
 
 document.querySelector("#code").addEventListener("input", function () {
   if (this.value.length > this.getAttribute("maxlength")) {
-    this.value = this.value.slice(0, this.getAttribute("maxlength"));
+    this.value = this.value.slice(0, this.getAttribute("max"));
   }
   document.querySelectorAll(".characters_now")[0].innerHTML = this.value.length;
 });
