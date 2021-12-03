@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/img/logo_stagon.png" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/css/style.css?ver=1.2.2">
+
+  <title>Stagon Crypto</title>
+</head>
+
+<body>
+  <div id="root">
+    <div class="header">
+      <img src="./assets/img/logo_stagon.png" alt="Logo da stagon" width="50">
+      <h1>Stagon Crypto</h1>
+    </div>
+    <div class="container" id="options">
+      <h1>Qual versão você deseja?</h1>
+      <div class="versions">
+        <div class="version" version="0.3.0">
+          <h3>Versão 0.3.0</h3>
+          <ul>
+            <li>Possibilidade de gerar códigos diferentes a depender da necessidade</li>
+            <li>Gerar códigos com emojis </li>
+          </ul>
+        </div>
+        <div class="version" version="0.2.1">
+          <h3>Versão 0.2.1</h3>
+          <ul>
+            <li>Atualização na estrutura da página</li>
+            <li>Otimização na usabilidade da Stagon Crypto</li>
+          </ul>
+        </div>
+        <div class="version" version="0.1.3">
+          <h3>Versão 0.1.3</h3>
+          <ul>
+            <li>Foi implementado a chave de autenticação</li>
+            <li>Suporte a vários caracteres, incluindo acentuações</li>
+          </ul>
+        </div>
+        <div class="version" version="0.0.1">
+          <h3>Versão 0.0.1</h3>
+          <ul>
+            <li>Primeira versão do Stagon Crypto</li>
+            <li>Indicado para gerar senhas e criptografar pequenas frase</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.querySelectorAll('.version').forEach(function (e) {
+        e.addEventListener('click', function () {
+          console.log(this.getAttribute('version'))
+          const tag = document.createElement('script')
+          tag.src = `./assets/js/script-${this.getAttribute('version').toString()}.min.js`
+          document.body.insertAdjacentElement('afterend', tag)
+        })
+      })
+    </script>
+  </div>
+
+</body>
+
+</html>
