@@ -2,6 +2,9 @@
   padding: 0;
   margin: 0;
 }
+a {
+  color: #fff;
+}
 
 body {
   font-family: sans-serif;
